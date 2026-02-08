@@ -1,0 +1,32 @@
+class Solution(object):
+    def reverseWords(self, str1):
+        
+        ss=list(str1)
+        ss=[" "]+ss+[" "]
+        l=len(ss)
+        word=""
+        rev=[]
+        for i in range(l):
+            if ss[i]!=" ":
+                word=word+ss[i]
+                
+            else:
+                if word!=" " and word!='':
+                    rev=rev+[word]+[" "]
+                    word=""
+            
+        del rev[-1]    
+        rev.reverse()
+        
+        return "".join(rev)
+                
+                
+           
+           
+       
+       
+       
+        
+s=Solution()
+m=s.reverseWords("the sky is blue")
+print(m)

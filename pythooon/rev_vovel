@@ -1,0 +1,27 @@
+class Solution(object):
+    def reverseVowels(self, s):
+        ss=list(s)
+        ul=len(s)-1
+        ll=0
+        v=set("aeiouAEIOU")
+        while ll<ul:
+            while ll<ul and ss[ll] not in v:
+                ll+=1
+            while ll<ul and ss[ul] not in v:
+                ul-=1
+            
+            ss[ll] , ss[ul] = ss[ul],ss[ll]    
+            ll+=1
+            ul-=1
+                
+                  
+        return "".join(ss)
+        
+        
+        
+        
+s=Solution()
+x=s.reverseVowels("IceCreAm")
+print(x)
+x=s.reverseVowels("leetcode")
+print(x)

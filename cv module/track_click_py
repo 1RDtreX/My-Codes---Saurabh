@@ -1,0 +1,58 @@
+# bro! before executing the program , intall these libraries
+
+# google pe inke bare me padh lena , taki koi puchhe to bata sako
+import cv2
+import mediapipe as mp
+import pyautogui
+import math
+
+# hand detection via camera
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
+draw = mp.solutions.drawing_utils
+
+# setting screen size
+scr_w, scr_h = pyautogui.size()
+
+# Starting camera
+cam = cv2.VideoCapture(0)
+# loop for vedio record
+while True:
+    ret, img = cam.read()
+    if not ret:
+        break
+
+    # Flip image and convert color so achha dikhe 😅
+    img = cv2.flip(img, 1)
+    h, w, _ = img.shape
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # colour value , cange kar sakte ho
+    res = hands.process(img_rgb)
+    # condition h taki hath track ho
+    if res.multi_hand_landmarks:
+        for hand in res.multi_hand_landmarks:
+            # Get index and thumb tip positions
+            ix, iy = int(hand.landmark[8].x * scr_w), int(hand.landmark[8].y * scr_h)
+            tx, ty = int(hand.landmark[4].x * scr_w), int(hand.landmark[4].y * scr_h)
+
+            # Move cursor to index finger position 
+            pyautogui.moveTo(ix, iy)
+
+            # to Calculate distance and click if close
+            dist = math.hypot(ix - tx, iy - ty)
+            if dist < 40:
+                pyautogui.click()
+                pyautogui.sleep(0.2)  # Delay to avoid rapid clicks
+
+            # Draw hand landmarks on screen taki pata chalta rahe
+            draw.draw_landmarks(img, hand, mp_hands.HAND_CONNECTIONS)
+
+    # Show image on screen
+    cv2.imshow("Cursor Control", img)
+    
+    # Quit on q key , koi aur button set karne ke lie 'q' ki jagah kuch aur likh dena but alphabet likhna 
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# window and module band karne ke lie
+cam.release()
+cv2.destroyAllWindows()

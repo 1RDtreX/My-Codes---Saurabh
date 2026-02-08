@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDtreX - Ultimate</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>RDtreX</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="https://www.instagram.com/saurabhvishwa4090/">About</a></li>
+        <li><a href="https://www.youtube.com/@RDtreX_">YouTube</a></li>
+        <li><a href="https://www.instagram.com/saurabhvishwa4090/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="grid-container">
+    <div class="card large-card">
+      <h2>The world of Multitask <em>Welcome</em> to my website</h2>
+    </div>
+    <div class="card image-box">
+      <img src="https://yt3.googleusercontent.com/m3GxInmadvFhpek7uTot5pvNVBHZIjgZDpgV9FPZB_IPS-pTyPSZo1igjXOHw-jBUs8-0jQXjA=s160-c-k-c0x00ffffff-no-rj" alt="DJ Lisa">
+    </div>
+    <div class="card schedule-box">
+      <h3>Professional in</h3>
+      <!-- <img src="first-dance.jpg" alt="First Dance"> -->
+      <ul>
+        <li><a href="https://www.youtube.com/@RDtreX_"  class="contact-btn2">Gaming--</a></li>
+        <li><a href="https://www.youtube.com/@RDtreX_here" class="contact-btn2">Coding--</a></li>
+        <li><a href="https://www.youtube.com/@RDtreX_here" class="contact-btn2">Cooking</a></li>
+      </ul>
+    </div>
+    <div class="card">
+      <p>RDtreX aka Saurabh Vishwakarma aka me is a Science Student in St. johns School , Habit of Coding everyday , playing good games and and to cook.<br>like Frontend Development and,<br>App Development<br>Java | Python | web dev | C core</p>
+    </div>
+    <div class="card contact-card">
+      <h3>Have some questions?</h3>
+      <a href="https://www.instagram.com/saurabhvishwa4090/" class="contact-btn">Contact me</a>
+    </div>
+    <div class="card">
+    <ul class="social-links">
+        <li><a href="https://www.instagram.com/saurabhvishwa4090/">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@RDtreX_">youtube</a></li>
+        <li><a href="https://in.pinterest.com/">Pinterest</a></li>
+    </ul>
+</div>
+</main>
+    <footer>
+  </footer>
+
+  <script>
+   // Function to detect if the user is on an iPhone or Android
+function detectMobileOS() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Check for iOS
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    // Check for Android
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    return "unknown";
+}
+
+// Apply specific styles or functions based on the detected OS
+const os = detectMobileOS();
+
+if (os === "iOS") {
+    // For iPhones: Add any iOS-specific tweaks or functionalities
+    document.body.style.fontSize = "larger"; // Example: Increase font size for iOS
+} else if (os === "Android") {
+    // For Android: Apply any Android-specific styles or functions
+    document.body.style.backgroundColor = "#F0F0F0"; // Example: Change background color for Android
+}
+
+// Log the detected OS to the console (for debugging)
+console.log("Detected OS: " + os);
+window.addEventListener("orientationchange", function() {
+    if (window.orientation === 0) {
+        // Portrait mode
+        console.log("Portrait mode detected");
+    } else {
+        // Landscape mode
+        console.log("Landscape mode detected");
+    }
+});
+// Adding touch event for mobile
+document.addEventListener("touchstart", handleTouchStart, false);
+document.addEventListener("touchmove", handleTouchMove, false);
+
+let xStart = null; // Starting x coordinate for touch
+
+function handleTouchStart(evt) {
+    const firstTouch = evt.touches[0]; // Get the first touch event
+    xStart = firstTouch.clientX; // Store the starting x coordinate
+}
+
+function handleTouchMove(evt) {
+    if (!xStart) {
+        return;
+    }
+
+    let xEnd = evt.touches[0].clientX;
+    let xDiff = xStart - xEnd;
+
+    if (xDiff > 0) {
+        // Swiped left
+        console.log("Swiped left");
+    } else {
+        // Swiped right
+        console.log("Swiped right");
+    }
+
+    // Reset xStart after swipe
+    xStart = null;
+}
+
+  </script>
+</body>
+</html>

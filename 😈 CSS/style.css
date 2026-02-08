@@ -1,0 +1,41 @@
+body{
+    background-color:#fefae0;
+    align-items: start;
+}
+h1{
+   font-family:'Segoe UI';
+    color:black
+
+}
+div{
+    background-color: #d4a373;
+}
+
+.uptag{
+    background-color:  #d4a373;
+    border :0cap
+    
+    
+}
+p{ font-family:'Franklin Gothic Medium';
+    color:rgb(129, 129, 129);
+    text-decoration:dotted;
+    font-weight:bold;
+}
+.pro{
+        align-items: end;
+    }
+
+.but{
+    font-size: medium;
+}
+img{
+    height: 100;
+}
+.rest{
+    background-image:"back.jpg";
+}
+#profile
+{
+    text-align: right;
+}

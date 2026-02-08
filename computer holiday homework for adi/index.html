@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPUTER HOLIDAY HOMEWORK</title>
+    <style>
+        body{
+            background-color: rgb(33, 33, 33);
+        }
+        h1{
+            font-size: 961000 px;
+
+            font-family: 'Courier New', Courier, monospace;
+            color:white;
+            
+            text-align: centre;
+        }
+        p{
+            color:white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h2{
+            color:antiquewhite;
+        }
+        h3{
+            color:blanchedalmond;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    #ex{
+        color:brown;
+    }
+    #code
+    {
+        color:beige
+    }
+    </style>
+</head>
+<body>
+    <header ><b><h1 >COMPUTER HOMEWORK FOR ADITYA BROTHER</h1></b></header>
+    <br>
+    <p>
+    <h2>**Object-Oriented Programming in Java**</h2>
+
+<p>Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes to structure software in a way that models real-world entities and their interactions.<br> Java, as a prominent OOP language, provides a robust framework for developing modular and reusable software.<br> This essay delves into the fundamental concepts of OOP in Java, highlighting its core principles and illustrating them with appropriate examples.<br>
+</p>
+<h3>**Classes and Objects**</h3><br>
+<p>
+At the heart of OOP lies the concept of *classes* and *objects*.<br>
+ A class is a blueprint for creating objects, representing a group of related entities.<br>
+  An object is an instance of a class, encapsulating both data and behavior. For example, consider a class named `Car`.<br>
+   It defines properties like `color`, `model`, and `speed`, and methods like `accelerate` and `brake`. Each car object, such as a red sports car or a blue sedan, would be an instance of this class.
+</p>
+   <h3>**Encapsulation**</h3><br>
+<p>
+Encapsulation is the principle of bundling data (attributes) and methods (functions) that operate on the data into a single unit, or class.<br>
+ It restricts direct access to some of an object's components, which is a means of preventing unintended interference and misuse of the methods and data. In Java, encapsulation is achieved using access modifiers like `private`, `protected`, and `public`.<br>
+  For instance, by making the `speed` attribute of the `Car` class private, it can only be accessed or modified through public methods like `getSpeed` and `setSpeed`.
+</p><p id="ex">
+_Example:_  
+```
+private int speed;
+
+public int getSpeed() {
+    return speed;
+}
+
+public void setSpeed(int newSpeed) {
+    speed = newSpeed;
+}
+```</p>
+
+<h3>**Inheritance**</h3>
+<p>
+Inheritance is a mechanism where one class (subclass) inherits the properties and behaviors of another class (superclass).<br> This promotes code reusability and establishes a natural hierarchy between classes. For example, if we have a superclass `Vehicle` with attributes like `make` and `year`, and methods like `start` and `stop`, a subclass `Car` can inherit these attributes and methods, while also introducing additional features specific to cars.<br> This allows us to create a new class based on an existing class, reducing redundancy.
+</p>
+<p id="ex">
+_Example:_  
+```
+class Vehicle {
+    protected String make;
+    protected int year;
+
+    public void start() {
+        System.out.println("Vehicle started");
+    }
+
+    public void stop() {
+        System.out.println("Vehicle stopped");
+    }
+}
+<br>
+class Car extends Vehicle {
+    private String model;
+
+    public Car(String make, int year, String model) {
+        this.make = make;
+        this.year = year;
+        this.model = model;
+    }
+
+    public void displayDetails() {
+        System.out.println("Make: " + make + ", Year: " + year + ", Model: " + model);
+    }
+}
+```
+</p>
+<h3>**Polymorphism**</h3>
+<p>
+Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. <br>The two types of polymorphism in Java are compile-time (method overloading) and runtime (method overriding).<br> Method overloading occurs when multiple methods in the same class have the same name but different parameters.<br> Method overriding, on the other hand, allows a subclass to provide a specific implementation of a method that is already defined in its superclass.<br> For example, if the `Vehicle` class has a method `move`, the `Car` class can override this method to provide its own implementation.
+</p>
+<p id="ex">
+_Example of Method Overloading:_  
+```
+class MathUtils {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+```
+<br>
+_Example of Method Overriding:_  
+```
+class Vehicle {
+    public void move() {
+        System.out.println("Vehicle is moving");
+    }
+}
+<br>
+class Car extends Vehicle {
+    @Override
+    public void move() {
+        System.out.println("Car is moving");
+    }
+}
+```
+</p>
+<h3>**Abstraction**</h3>
+<p>
+Abstraction involves hiding the complex implementation details and showing only the essential features of the object.<br> It helps in reducing programming complexity and effort. In Java, abstraction can be achieved using abstract classes and interfaces.<br> An abstract class cannot be instantiated and may contain abstract methods that must be implemented by subclasses. Interfaces define a contract for what a class can do without dictating how it should do it. <br>For example, an interface `Driveable` can define a method `drive`, and any class implementing this interface must provide an implementation for the `drive` method.
+</p>
+<p id="ex">
+_Example:_  <br>
+```<br>
+interface Driveable {<br>
+    void drive();<br>
+}<br>
+<br>
+class Car implements Driveable {<br>
+    @Override<br>
+    public void drive() {<br>
+        System.out.println("Car is driving");<br>
+    }<br>
+}<br>
+```<br>
+</p>
+<h3>**Conclusion**</h3>
+<p>
+In conclusion, Object-Oriented Programming in Java provides a structured approach to software development by modeling real-world entities as classes and objects.<br> The principles of encapsulation, inheritance, polymorphism, and abstraction are fundamental to OOP, enabling developers to write modular, reusable, and maintainable code.<br> Understanding and applying these principles effectively can lead to robust and efficient software solutions, making Java a powerful tool in the hands of skilled programmers.
+</p>
+</p>
+
+
+<br>
+<br>
+<br>
+<h3>Part 2 : JAPA PROGRAM</h3>
+<p id="code">
+    // number converter by RDtreX for my friend ADITYA<br>
+import java.util.Scanner;<br>
+class NC_by_RDtreX {<br>
+
+    public static void main(String[] args) {<br>
+        Scanner sc = new Scanner(System.in);<br>
+
+        while (true) {<br>
+            System.out.println("Number Converter Menu:");<br>
+            System.out.println("1. Binary to Decimal");<br>
+            System.out.println("2. Decimal to Binary");<br>
+            System.out.println("3. Octal to Decimal");<br>
+            System.out.println("4. Decimal to Octal");<br>
+            System.out.println("5. Hexadecimal to Decimal");<br>
+            System.out.println("6. Decimal to Hexadecimal");<br>
+            System.out.println("7. Exit");<br>
+            System.out.print("Enter your choice: ");<br>
+
+            int choice = sc.nextInt();<br>
+            if (choice == 7) {<br>
+                System.out.println("Exiting...");<br>
+                break;<br>
+            }
+
+            System.out.print("Enter the number: ");<br>
+            String number = sc.next();<br>
+
+            switch (choice) {<br>
+                case 1:<br>
+                    System.out.println("Binary to Decimal: " + Integer.parseInt(number, 2));<br>
+                    break;<br>
+                case 2:<br>
+                    System.out.println("Decimal to Binary: " + Integer.toBinaryString(Integer.parseInt(number)));<br>
+                    break;<br>
+                case 3:<br>
+                    System.out.println("Octal to Decimal: " + Integer.parseInt(number, 8));<br>
+                    break;<br>
+                case 4:<br>
+                    System.out.println("Decimal to Octal: " + Integer.toOctalString(Integer.parseInt(number)));<br>
+                    break;<br>
+                case 5:<br>
+                    System.out.println("Hexadecimal to Decimal: " + Integer.parseInt(number, 16));<br>
+                    break;<br>
+                case 6:<br>
+                    System.out.println("Decimal to Hexadecimal: " + Integer.toHexString(Integer.parseInt(number)));<br>
+                    break;<br>
+                default:<br>
+                    System.out.println("Invalid choice. Sir try again.");<br>
+                    break;<br>
+            }<br>
+        }<br>
+    }<br>
+}<br>
+</p>
+</body>
+</html>

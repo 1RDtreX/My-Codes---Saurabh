@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Cybertruck</title>
+    <style>
+        @font-face {
+            font-family: 'cybertrck';
+            src: url('D:/CODING projects/cybertruck/CyberwayRiders-lg97d.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'cybertrck', Arial, sans-serif;
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLBYRYkMhqoihtwzZtmZf1mcFHFT7hUyFEzEQS2mknZnb_XkKVFxKxkKA-5rcmiRDmcaaHRSBa3X0vPXteBAZ604UptQl0H1dohy6kEIgdJl1ngXwRgIPYFm4Hm4_D_vfX9qu5TYytBm-_yPIt3IC74tSP3NoFGwgkufdW6PJsDsE53O-xoSx0jHQJ3A/s1600/WHITE-FERRARI-HEROSCREEN-5192023.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            transition: background 0.5s ease-in-out;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0); /* Completely transparent background */
+            color: #fff;
+            padding: 10px 0;
+            backdrop-filter: blur(10px); /* Apply blur effect to the header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; /* Keep the header fixed at the top */
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* Ensure the header is above other content */
+        }
+
+        header #branding h1 {
+            margin-left: 20px;
+            font-size: 24px;
+            font-family: 'cybertrck', Arial, sans-serif;
+            font-weight: lighter;
+        }
+
+        header nav {
+            text-align: center;
+        }
+
+        header ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        header li {
+            display: inline;
+            padding: 0 10px;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-family: 'cybertrck', Arial, sans-serif;
+            padding: 10px 20px;
+            transition: background 0.3s, backdrop-filter 0.3s;
+            display: inline-block;
+            background: rgba(0, 0, 0, 0); /* Transparent background for buttons */
+        }
+
+        header a:hover {
+            background: rgba(255, 255, 255, 0.2); /* Light background on hover */
+            backdrop-filter: blur(5px); /* Apply blur effect on hover */
+        }
+
+        .showcase {
+            font-family: 'cybertrck';
+            min-height: 400px;
+            text-align: center;
+            color: #fff;
+            padding-top: 60px; /* Adjust padding-top to account for the fixed header */
+        }
+
+        .showcase h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .showcase p {
+            font-size: 20px;
+        }
+        .branding{
+
+           font-family: 'cybertrck', Arial, sans-serif;
+           font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="branding">
+            <h1>RDtreX Portfolio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Add</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="showcase">
+        
+            <!-- <h2>WELCOME TO THE CAR COLLECTION</h2> -->
+      
+    </section>
+
+    <script>
+        const images = [
+            'https://www.motortrend.com/uploads/2022/10/2023-Porsche-911-GT3-RS-in-motion-3.jpg',
+            'https://philipireland.com/_userfiles/thumbs/_userfiles-pages-images-cars-488_pista_green_carbon_and_verde_scuro/ferrari_488_pista_6_1498x1000-jpg/f429cdbd855ceb1d41060d4f7c4b3014/ferrari_488_pista_6_1498x1000.jpg',
+            'https://media.wired.com/photos/6423826d7f6ce88e606d7b55/16:9/w_1900,h_1069,c_limit/Lamborghini-Revuelto-Featured-Gear.jpg',
+            'https://images5.alphacoders.com/127/1276064.jpg'
+        ];
+
+        let currentImageIndex = 0;
+
+        document.body.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        });
+    </script>
+</body>
+</html>

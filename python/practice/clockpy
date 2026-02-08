@@ -1,0 +1,18 @@
+import datetime
+x=datetime.datetime.now()
+hour=int(x.strftime("%I"))
+perim=(x.strftime("%p"))
+print(hour)
+print(perim)
+if perim=="AM":
+    if hour>=4:
+        print("Good Morning")
+    else :
+        print("Good night")
+        
+elif perim=="PM":
+    if hour>=5 and hour<9:
+        print("Good Evening")
+    elif hour>=9:
+        print("Good night")
+        

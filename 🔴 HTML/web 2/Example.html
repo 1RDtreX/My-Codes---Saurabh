@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OOP Principles in HTML</title>
+<style>
+    .shape {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .circle {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+    }
+
+    .rectangle {
+        width: 150px;
+        height: 100px;
+        background-color: lightgreen;
+    }
+
+    .square {
+        width: 100px;
+        height: 100px;
+        background-color: lightcoral;
+    }
+</style>
+</head>
+<body>
+    <div class="shape circle" data-radius="5"></div>
+    <div class="shape rectangle" data-length="4" data-width="6"></div>
+    <div class="shape square" data-side="3"></div>
+
+    <script>
+        document.querySelectorAll('.shape').forEach(function(shape) {
+            if (shape.classList.contains('circle')) {
+                var radius = parseFloat(shape.getAttribute('data-radius'));
+                shape.textContent = 'Circle Area: ' + (Math.PI * radius * radius).toFixed(2);
+            } else if (shape.classList.contains('rectangle')) {
+                var length = parseFloat(shape.getAttribute('data-length'));
+                var width = parseFloat(shape.getAttribute('data-width'));
+                shape.textContent = 'Rectangle Area: ' + (length * width).toFixed(2);
+            } else if (shape.classList.contains('square')) {
+                var side = parseFloat(shape.getAttribute('data-side'));
+                shape.textContent = 'Square Area: ' + (side * side).toFixed(2);
+            }
+        });
+    </script>
+</body>
+</html>

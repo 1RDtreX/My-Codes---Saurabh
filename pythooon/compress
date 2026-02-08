@@ -1,0 +1,19 @@
+class Solution(object):
+    def compress(self, chars):
+        ch=chars[0]
+        
+        n=0
+        for i in range(len(chars)-1):
+            if ch==chars[i]:
+                n+=1
+            print(i)
+        
+        
+        return s
+        
+        
+        
+
+s=Solution()
+x=s.compress(["a","a","a","b","b","b","b","c"])
+print(x)        

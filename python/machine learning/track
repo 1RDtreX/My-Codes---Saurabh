@@ -1,0 +1,77 @@
+import cv2
+import mediapipe as mp
+import pyautogui
+import numpy as np
+
+# Open hand module
+mp_hands = mp.solutions.hands
+mp_drawing = mp.solutions.drawing_utils
+
+# Capture
+cap = cv2.VideoCapture(0)
+
+# Dimensions of the video frame
+width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+# Hand tracking
+with mp_hands.Hands(
+    max_num_hands=1,  # Detect one hand
+    min_detection_confidence=0.7,
+    min_tracking_confidence=0.7) as hands:
+
+    while cap.isOpened():
+        success, image = cap.read()
+        if not success:
+            print("Ignoring empty camera frame.")
+            continue
+        image = cv2.flip(image, 1)
+
+        # Convert the image to RGB
+        image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+        # Process the image to detect hands
+        results = hands.process(image_rgb)
+
+        # Convert the image back to BGR for rendering
+        image = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
+
+        if results.multi_hand_landmarks:
+            for hand_landmarks in results.multi_hand_landmarks:
+                mp_drawing.draw_landmarks(
+                    image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+                # Get the coordinates of the index finger tip
+                index_finger_tip = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP]
+                cursor_x = int(index_finger_tip.x * width)
+                cursor_y = int(index_finger_tip.y * height)
+
+                # Move the mouse cursor
+                screen_width, screen_height = pyautogui.size()
+                pyautogui.moveTo(cursor_x * screen_width // width, cursor_y * screen_height // height)
+
+                # Detect if the hand is making a fist (all fingers close)
+                thumb_tip = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP]
+                index_finger_tip = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP]
+                middle_finger_tip = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_TIP]
+                ring_finger_tip = hand_landmarks.landmark[mp_hands.HandLandmark.RING_FINGER_TIP]
+                pinky_tip = hand_landmarks.landmark[mp_hands.HandLandmark.PINKY_TIP]
+
+                # Measure distances between fingers to check for a fist
+                distance_thumb_index = np.sqrt((thumb_tip.x - index_finger_tip.x) ** 2 + (thumb_tip.y - index_finger_tip.y) ** 2)
+                distance_index_middle = np.sqrt((index_finger_tip.x - middle_finger_tip.x) ** 2 + (index_finger_tip.y - middle_finger_tip.y) ** 2)
+                distance_middle_ring = np.sqrt((middle_finger_tip.x - ring_finger_tip.x) ** 2 + (middle_finger_tip.y - ring_finger_tip.y) ** 2)
+                distance_ring_pinky = np.sqrt((ring_finger_tip.x - pinky_tip.x) ** 2 + (ring_finger_tip.y - pinky_tip.y) ** 2)
+
+                # If all finger distances are small, it's a fist
+                if distance_thumb_index < 0.05 and distance_index_middle < 0.05 and distance_middle_ring < 0.05 and distance_ring_pinky < 0.05:
+                    pyautogui.click(button='left')
+
+        # Display the video feed with hand tracking
+        cv2.imshow('Hand Tracking by RDtreX', image)
+
+        if cv2.waitKey(5) & 0xFF == ord('q'):
+            break
+
+cap.release()
+cv2.destroyAllWindows()

@@ -1,0 +1,446 @@
+/* Reset basic styles */
+* 
+/* Responsive CSS Example for Android and iPhones */
+
+/* General layout for larger screens (default) */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  max-width: 1200px;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+/* For small mobile screens, including iPhone SE, Android phones */
+@media (max-width: 767px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  /* Resize font sizes and other UI elements for smaller screens */
+  .card {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  header, footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .image-box img {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  /* Adjust buttons and links */
+  .contact-btn {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Body styling */
+body {
+  background-color:black;
+  color: #121210;
+  line-height: 1.6;
+}
+
+/* Header section */
+header {
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-left: 20px;
+    background-color: #d3c8b5;
+    border-radius: 10px;  /* Apply rounded corners */
+    margin: 20px;  /* Add some margin to avoid it sticking to the edges */
+  }
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Grid Layout */
+.grid-container {
+  display:grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  /* padding: 50px; */
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+/* Card styles */
+.card {
+  background-color: #d3c8b5;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.large-card {
+  grid-column: 1.2 / 2;
+  grid-row: 1.3;
+  background-color: #d3c8b5;
+}
+
+.image-box {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+
+.image-box img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.schedule-box {
+  grid-column: 0.8 / 2;
+  grid-row: 2;
+  background-color: #d3c8b5;
+}
+
+.schedule-box h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.schedule-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.schedule-box ul {
+  list-style: none;
+}
+
+.schedule-box ul li {
+  padding: 5px 0;
+}
+
+.schedule-box ul li a {
+  text-decoration: none;
+  color: #c9ada7;
+  font-size: 1.2em;
+}
+
+.contact-card {
+  grid-column: 2 / 3;
+  grid-row: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a9a29c;
+}
+
+.contact h3 {
+  font-size: 1.4em;
+  margin-right: 20px;
+}
+
+.contact-btn {
+  border-radius:10px ;
+  appearance: none;
+  background-color: #000000;
+  border-width: 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.contact-btn::before {
+  border-radius:10px ;
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #000000;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.contact-btn:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.contact-btn:after {
+  border-radius:10px ;
+  background-color: #656565;
+}
+
+.contact-btn span {
+  z-index: 1;
+  position: relative;
+}
+
+/* @ button */
+.contact-btn2 {
+  border-radius:10px ;
+  appearance: none;
+  background-color: #000000;
+  border-width: 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.contact-btn2::before {
+  border-radius:10px ;
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #000000;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.contact-btn2:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.contact-btn2:after {
+  border-radius:10px ;
+  background-color: black;
+}
+
+.contact-btn2 span {
+  z-index: 1;
+  position: relative;
+}
+
+/* Footer section */
+footer {padding: 10px;
+  background-color: #d3c8b5;
+  border-radius: 10px;  /* Apply rounded corners */
+  margin: 20px;  /* Add some margin to avoid it sticking to the edges */
+  text-align: center;
+}
+
+footer .social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-links li a {
+  text-decoration: none;
+  color: #333;
+}
+/* Media Query for Tablets */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns on tablets */
+  }
+  
+
+@media (max-width: 767px) {
+  header, footer {
+    padding: 15px;
+    margin: 10px 0;
+  }
+}
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+/* Body styling */
+body {
+  background-color: #1b263b;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure grid container fills available space */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Fixed 2-column layout for larger screens */
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  max-width: 1200px;
+  padding: 50px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+/* Card styles */
+.card {
+  background-color: #e0e1dd;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Larger card spans across columns */
+.large-card {
+  grid-column: 1 / 3;
+  background-color: #F5F1EB;
+}
+
+.image-box {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.image-box img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.schedule-box {
+  background-color: #F8F4E7;
+}
+
+.contact-card {
+  background-color: #C8B497;
+}
+
+/* Footer section */
+footer {
+  padding: 10px;
+  background-color: #F5F1EB;
+  border-radius: 10px;
+  text-align: center;
+}
+
+footer .social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Responsive design for smaller devices (Tablets and smaller) */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Switch to single-column layout on smaller screens */
+    grid-template-rows: auto; /* Let rows auto-adjust */
+    gap: 20px;
+  }
+
+  /* Ensure cards take full width in single-column layout */
+  .large-card, .image-box, .schedule-box, .contact-card {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid-container {
+    padding: 20px; /* Adjust padding for mobile */
+  }
+
+  .card {
+    padding: 15px; /* Resize padding for smaller screens */
+  }
+
+  header, footer {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

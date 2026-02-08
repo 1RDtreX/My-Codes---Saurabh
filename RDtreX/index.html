@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDtreX</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        main {
+            padding: 50px 20px;
+        }
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        #model-container {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Mac</a>
+            <a href="#">iPad</a>
+            <a href="#">iPhone</a>
+            <a href="#">Watch</a>
+            <a href="#">TV</a>
+            <a href="#">Music</a>
+            <a href="#">Support</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to RDtreX</h1>
+        <p>Explore the world of RDtreX products.</p>
+        <div id="model-container"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 RDtreX Inc. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.min.js"></script>
+    <script>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('model-container').appendChild(renderer.domElement);
+        // Set the background color of the scene to white
+        renderer.setClearColor(0xffffff, 1);
+
+        // Load the custom 3D model
+        const loader = new THREE.GLTFLoader();
+        let model;
+        loader.load('path/to/your/model.gltf', function(gltf) {
+            model = gltf.scene;
+            scene.add(model);
+        }, undefined, function(error) {
+            console.error(error);
+        });
+
+        camera.position.z = 5;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            if (model) {
+                model.rotation.x += 0.005; // Slower rotation
+                model.rotation.y += 0.005; // Slower rotation
+            }
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Add interactivity
+        window.addEventListener('mousemove', (event) => {
+            if (model) {
+                model.rotation.y = (event.clientX / window.innerWidth) * 2 * Math.PI;
+                model.rotation.x = (event.clientY / window.innerHeight) * 2 * Math.PI;
+            }
+        });
+    </script>
+</body>
+</html>

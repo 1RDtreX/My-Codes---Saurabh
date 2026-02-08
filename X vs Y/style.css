@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+}
+nav{
+    background-color: blueviolet;
+}
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    color: chartreuse;
+    font-weight: lighter;
+    align-self: center;
+}
+#a
+{   display:inline-flex;
+    margin:0%;
+    border:0%;
+    padding-left:49.5%;
+    padding-bottom:50%;
+    background-color: blue;
+}
+#b
+{    display:inline-flex;
+    margin:0%;
+    border:0%;
+    padding-left:49%;
+    padding-bottom:50%;
+    background-color:red;
+}

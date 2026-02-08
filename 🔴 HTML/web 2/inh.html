@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Inheritance in OOP</title>
+</head>
+<body>
+    <h1><i>Inheritance in OOP</i></h1>
+
+    <p><b>Definition:</b><br>
+    <i>Inheritance</i> is a fundamental concept in <i>Object-Oriented Programming (OOP)</i> that allows a new class to <i>inherit attributes and methods</i> from an existing class. The new class is called the <b>subclass</b> (or <i>derived class</i>), and the existing class is called the <b>superclass</b> (or <i>base class</i>).</p>
+
+    <p><b>Key Concepts:</b><br>
+    1. <b>Superclass and Subclass:</b><br>
+    The superclass is the class being inherited from, while the subclass is the class that inherits from the superclass.<br><br>
+    
+    2. <b>Reusability:</b><br>
+    Inheritance promotes reusability by allowing the subclass to reuse code from the superclass. This reduces redundancy and enhances code maintenance.<br><br>
+    
+    3. <b>Hierarchical Relationships:</b><br>
+    Inheritance creates a hierarchical relationship between classes. The subclass inherits the properties and behaviors of the superclass, forming a parent-child relationship.<br><br>
+    
+    4. <b>Overriding Methods:</b><br>
+    Subclasses can override methods from the superclass to provide specific implementations. This allows for <i>polymorphism</i>, where a subclass can define its own version of a method that is also defined in the superclass.</p>
+
+    <img src="inherit.png" alt="Inheritance Example Image" height="400">
+
+    <p><b>Explanation of Example:</b><br>
+    1. <b>Superclass (Animal):</b><br>
+    The <i>Animal</i> class has an <code>__init__</code> method to initialize the <i>name</i> attribute and a <code>speak</code> method that returns a generic sound.<br><br>
+    
+    2. <b>Subclass (Dog and Cat):</b><br>
+    The <i>Dog</i> and <i>Cat</i> classes inherit from the <i>Animal</i> class. They override the <code>speak</code> method to provide specific sounds for dogs and cats.<br><br>
+    
+    3. <b>Usage:</b><br>
+    Instances of <i>Dog</i> and <i>Cat</i> demonstrate inheritance by using the <i>name</i> attribute (inherited from <i>Animal</i>) and their overridden <code>speak</code> methods.</p>
+
+    <p><b>Benefits of Inheritance:</b><br>
+    1. <b>Code Reusability:</b><br>
+    Inheritance allows subclasses to reuse code from the superclass, reducing duplication and promoting consistency.<br><br>
+    
+    2. <b>Logical Structure:</b><br>
+    It helps in organizing code logically, reflecting real-world relationships, and making the code more understandable and maintainable.<br><br>
+    
+    3. <b>Extensibility:</b><br>
+    New functionality can be added to the system by creating new subclasses without modifying existing code, adhering to the Open/Closed Principle.</p>
+
+    <p><b>Types of Inheritance:</b><br>
+    1. <b>Single Inheritance:</b><br>
+    A subclass inherits from a single superclass.<br><br>
+    
+    2. <b>Multiple Inheritance:</b><br>
+    A subclass inherits from more than one superclass.<br><br>
+    
+    3. <b>Multilevel Inheritance:</b><br>
+    A subclass inherits from another subclass, forming a chain of inheritance.<br><br>
+    
+    4. <b>Hierarchical Inheritance:</b><br>
+    Multiple subclasses inherit from a single superclass.<br><br>
+    
+    5. <b>Hybrid Inheritance:</b><br>
+    A combination of two or more types of inheritance.</p>
+
+    <img src="https://www.example.com/image2.png" alt="Multiple Inheritance Example Image">
+
+    <p><b>Explanation of Example:</b><br>
+    1. <b>Superclass (Animal):</b><br>
+    Defines a method <code>eat</code>.<br><br>
+    
+    2. <b>Subclasses (Mammal and Bird):</b><br>
+    <i>Mammal</i> inherits from <i>Animal</i> and adds a <code>walk</code> method. <i>Bird</i> inherits from <i>Animal</i> and adds a <code>fly</code> method.<br><br>
+    
+    3. <b>Multiple Inheritance (Bat):</b><br>
+    The <i>Bat</i> class inherits from both <i>Mammal</i> and <i>Bird</i>, thus inheriting methods from both hierarchies.</p>
+
+    <p>Inheritance is a powerful feature in OOP that allows for the creation of hierarchical class structures, promoting code reuse, logical organization, and extensibility.</p>
+</body>
+</html>

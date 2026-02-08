@@ -1,0 +1,16 @@
+# selection sorting
+
+a=[9,4,1,7,2,5,8,6,3,0]
+timer=0
+for i in range(len(a)):
+    timer+=1
+    print(a,"=",timer)
+    for j in range(len(a)-1):
+        
+        if a[i]<a[j]:
+            k=a[i]
+            a[i]=a[j]
+            a[j]=k
+
+            
+    

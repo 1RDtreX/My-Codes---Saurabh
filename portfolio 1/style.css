@@ -1,0 +1,142 @@
+body{
+    background-image:url(https://i.pinimg.com/originals/b1/6d/90/b16d909fa4fbf4f57c549e8a956ae81c.jpg);
+
+    
+    
+}
+div{
+    margin-bottom:0px;
+    height:100;
+}
+
+#port
+{   font-size: 50px;
+    
+    color:rgb(8, 134, 192);
+    margin-left:50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#folio
+{ font-size: 50px;
+    color:rgb(7, 92, 132);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#heading { 
+    margin-left:100px;
+   font-size:50px;
+    color:white;
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+   border-radius: 0px;
+    width:300px;
+    border: 0px;
+   margin-right: 0;
+   padding: 10px;
+}
+
+.button {
+    margin-left:500px;
+    backdrop-filter: blur(100%);
+
+    top: 45px;
+    right: 20px;
+    padding-top:5px;
+    padding: 10px 20px;
+    margin-top: 0;
+    margin-right:10px;
+    margin-bottom: 60px;
+    padding: 10px;
+    font-family:'fera code','dejavu mono' , 'jetbrains mono';
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color:rgb(3, 100, 169);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.button:hover {
+    background-color:rgb(0, 2, 23);
+    color:rgb(173, 251, 251);
+    
+}
+
+.buttonx {
+
+    backdrop-filter: blur(100%);
+
+    top: 45px;
+    right: 20px;
+    padding-top:5px;
+    padding: 10px 20px;
+    margin-top: 0;
+    margin-right:10px;
+    margin-bottom: 60px;
+    padding: 10px;
+    font-family:'fera code','dejavu mono' , 'jetbrains mono';
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color:rgb(3, 100, 169);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.button:hover {
+    background-color:rgb(0, 2, 23);
+    color:rgb(173, 251, 251);
+    
+}
+
+
+
+
+
+h2{
+    font-size: 60 px;;
+    margin-left:10px;
+    color:white;
+    font-family:'Courier New', Courier, monospace;
+}
+h4
+{   font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left:10px;
+    color:rgb(255, 255, 255);
+}
+#hire
+{
+    top: 45px;
+    right: 20px;
+    padding-top:5px;
+    padding: 10px 20px;
+    margin-top: 0;
+    margin-right:10px;
+    margin-bottom: 60px;
+    padding: 10px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color:rgb(251, 243, 230);
+    color:rgb(255, 85, 0);
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+#hire:hover
+{
+    background-color:rgb(0, 0, 0);
+    color:blue
+}
+#sau
+{ padding-right:50px;
+    margin-right:50px;
+    border-right:50px;
+    background-color: rgb(4, 154, 213);
+}

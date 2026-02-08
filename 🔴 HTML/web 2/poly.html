@@ -1,0 +1,67 @@
+
+<html lang="en">
+<head>
+    <title>Polymorphism in OOP</title>
+</head>
+<body>
+    <h1><i>Polymorphism in OOP</i></h1>
+
+    <p><b>Definition:</b><br>
+    <i>Polymorphism</i> is the ability of objects to take on different forms or have multiple behaviors. In <i>Object-Oriented Programming (OOP)</i>, polymorphism allows objects of different classes to be treated as objects of a common superclass.</p>
+
+    <p><b>Key Concepts:</b><br>
+    1. <b>Method Overriding:</b><br>
+    Polymorphism is often achieved through method overriding, where a subclass provides a specific implementation of a method that is already provided by its superclass. This allows the same method to behave differently for different classes.<br><br>
+    
+    2. <b>Compile-Time and Run-Time Polymorphism:</b><br>
+    - <i>Compile-time polymorphism</i> (also known as static polymorphism) is achieved through method overloading, where multiple methods have the same name but different parameters in the same class. The compiler determines which method to call based on the arguments passed.<br>
+    - <i>Run-time polymorphism</i> (also known as dynamic polymorphism) is achieved through method overriding. The specific method to be called is determined at runtime based on the type of object.<br><br>
+    
+    3. <b>Interfaces and Abstract Classes:</b><br>
+    - Interfaces and abstract classes in OOP provide a way to achieve polymorphism by defining a common interface that multiple classes can implement.<br>
+    - Interfaces define only method signatures, while abstract classes can also contain method implementations. Both allow for a single interface to be used to interact with multiple types of objects.</p>
+
+    <p><b>Example in Code:</b><br>
+    Consider a simple example in Python to demonstrate polymorphism using method overriding:</p>
+
+    <pre><code>&lt;pre&gt;&lt;code&gt;class Animal:
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+# Usage
+def animal_sound(animal):
+    print(animal.speak())
+
+dog = Dog()
+cat = Cat()
+
+animal_sound(dog)  # Outputs: Woof!
+animal_sound(cat)  # Outputs: Meow!
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+
+    <p><b>Explanation of Example:</b><br>
+    - The <i>Animal</i> class defines a method <code>speak</code> that is meant to be overridden by subclasses.<br>
+    - The <i>Dog</i> and <i>Cat</i> classes inherit from <i>Animal</i> and provide their own implementations of the <code>speak</code> method, demonstrating polymorphism.<br>
+    - The <code>animal_sound</code> function takes an <i>Animal</i> object as an argument and calls its <code>speak</code> method, which behaves differently based on the actual type of object passed.</p>
+
+    <p><b>Benefits of Polymorphism:</b><br>
+    1. <b>Code Flexibility:</b><br>
+    Polymorphism allows for more flexible and reusable code by enabling the same code to work with different types of objects.<br><br>
+    
+    2. <b>Reduced Complexity:</b><br>
+    It helps in reducing complexity by allowing for a simpler and more intuitive design, where objects can be treated uniformly regardless of their specific type.<br><br>
+    
+    3. <b>Enhanced Readability:</b><br>
+    Polymorphism improves code readability by making the code more concise and easier to understand, as the behavior of objects is determined by their types.</p>
+
+    <p>Polymorphism is a powerful concept in OOP that allows for flexible and extensible code, enabling the same code to be used with different types of objects.</p>
+</body>
+</html>

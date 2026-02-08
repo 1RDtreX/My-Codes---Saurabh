@@ -1,0 +1,67 @@
+
+<html lang="en">
+<head>
+    <title>Encapsulation in OOP</title>
+</head>
+<body>
+    <h1><i>Encapsulation in OOP</i></h1>
+
+    <p><b>Definition:</b><br>
+    <i>Encapsulation</i> is the concept of bundling the data (attributes) and the methods (functions) that operate on the data into a single unit called a <i>class</i>. It is one of the four fundamental concepts of <i>Object-Oriented Programming (OOP)</i>, along with <i>inheritance</i>, <i>polymorphism</i>, and <i>abstraction</i>.</p>
+
+    <p><b>Key Concepts:</b><br>
+    1. <b>Data Hiding:</b><br>
+    Encapsulation hides the internal state of an object from the outside world. The object's data can only be accessed and modified through the methods defined in the class, providing control over data access and modification.<br><br>
+    
+    2. <b>Access Control:</b><br>
+    Encapsulation allows the class to have control over who can access its data and methods. By using access modifiers such as <i>public</i>, <i>private</i>, and <i>protected</i>, the class can specify the level of access to its members.<br><br>
+    
+    3. <b>Code Organization:</b><br>
+    Encapsulation helps in organizing code by grouping related data and methods into a single unit. This improves code readability, maintainability, and reusability.</p>
+
+    <p><b>Example in Code:</b><br>
+    Consider a simple example of a <i>Person</i> class in Python to demonstrate encapsulation:</p>
+
+    <pre><code>&lt;pre&gt;&lt;code&gt;class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+    
+    def get_name(self):
+        return self.__name
+    
+    def set_name(self, name):
+        self.__name = name
+
+    def get_age(self):
+        return self.__age
+    
+    def set_age(self, age):
+        if age &gt;= 0:
+            self.__age = age
+
+# Usage
+person = Person("Alice", 30)
+print(person.get_name())
+person.set_age(-5)  # Age cannot be negative
+print(person.get_age())
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+
+    <p><b>Explanation of Example:</b><br>
+    - The <i>Person</i> class encapsulates the data (name and age) using private attributes (<code>__name</code> and <code>__age</code>) and provides public methods (<code>get_name</code>, <code>set_name</code>, <code>get_age</code>, <code>set_age</code>) to access and modify the data.<br><br>
+    
+    - The methods <code>set_age</code> and <code>set_name</code> ensure that the age is non-negative and provide a way to update the name, respectively, demonstrating encapsulation's role in data validation and access control.</p>
+
+    <p><b>Benefits of Encapsulation:</b><br>
+    1. <b>Data Protection:</b><br>
+    Encapsulation protects the data from unauthorized access and modification, enhancing security and data integrity.<br><br>
+    
+    2. <b>Modularity:</b><br>
+    It promotes modularity by encapsulating related data and methods into a single unit, making it easier to manage and maintain the code.<br><br>
+    
+    3. <b>Flexibility:</b><br>
+    Encapsulation allows for the internal implementation of a class to change without affecting its external interface, providing flexibility in design and implementation.</p>
+
+    <p>Encapsulation is a powerful concept in OOP that promotes data hiding, access control, and code organization, leading to more robust and maintainable software.</p>
+</body>
+</html>

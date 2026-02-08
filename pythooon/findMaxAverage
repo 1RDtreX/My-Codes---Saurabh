@@ -1,0 +1,37 @@
+class Solution(object):
+    def findMaxAverage(self, nums, k):
+        base=k
+        x=len(nums)-k
+        avg=0.0
+        s=0
+        
+        for i in range(k):
+            sum=0
+            m=sum
+            j=i
+            print(sum)
+            for j in range(k):
+                sum=sum+nums[j]
+                
+            if(sum>m):
+                k=+1
+                continue
+            else:
+                s=sum
+                continue
+        avg=s/base    
+            
+        print(avg)    
+        
+        
+                
+
+            
+            
+            
+            
+            
+
+    
+s=Solution()
+s.findMaxAverage([1,12,-5,-6,50,3],4)

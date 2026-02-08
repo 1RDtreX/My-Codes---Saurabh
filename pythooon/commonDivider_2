@@ -1,0 +1,22 @@
+class Solution(object):
+    def gcdOfStrings(self,str1,str2):
+        ss=Solution()
+        x=ss.shortstr(str1)
+        m=ss.shortstr(str2)
+        
+        return x if x==m else ""  
+        
+    def shortstr(self,str2):    
+        x=str2[0]
+        for i in range(1,len(str2)):
+            if x[0]==str2[i]:
+                break
+            else:
+                x=x+str2[i]
+        return x        
+        
+        
+        
+s=Solution()
+x=s.gcdOfStrings("ABCABC","ABC")
+print(x)

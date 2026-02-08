@@ -1,0 +1,15 @@
+def write_to_notepad():
+    # Prompt the user for input
+    user_input = input("Please enter the text you want to save to notepad: ")
+
+    # Define the filename
+    filename = 'x.txt'
+
+    # Open the file in write mode and save the input
+    with open(filename, 'w') as file:
+        file.write(user_input)
+
+    print(f"Your input has been saved to {filename}")
+
+# Call the function to execute it
+write_to_notepad()
